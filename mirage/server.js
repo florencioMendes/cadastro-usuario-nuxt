@@ -11,24 +11,24 @@ export function makeServer() {
     routes() {
       this.namespace = "api"
 
-      this.get("/users", (schema) => {
+      this.get("/users", (schema, request) => {
         return schema.users.all()
       })
 
-      this.post("/users", (schema) => {
+      this.post("/users", (schema, request) => {
         let attrs = JSON.parse(request.requestBody)
-        return schema.users.create(attrs)
+        return {user: schema.users.create(attrs)}
       })
 
-      this.put("/users/:id", (schema) => {
+      this.put("/users/:id", (schema, request) => {
         let id = request.params.id
         let attrs = JSON.parse(request.requestBody)
-        return schema.users.find(id).update(attrs)
+        return {user: schema.users.find(id).update(attrs)}
       })
 
-      this.delete("/users/:id", (schema) => {
+      this.delete("/users/:id", (schema, request) => {
         let id = request.params.id
-        return schema.users.find(id).destroy()
+        return {user: schema.users.find(id).destroy()}
       })
     },
   })
