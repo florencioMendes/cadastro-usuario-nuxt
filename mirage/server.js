@@ -1,4 +1,5 @@
-import { createServer, Model } from "miragejs"
+import { createServer, Factory, Model } from "miragejs";
+import { faker } from '@faker-js/faker';
 
 export function makeServer() {
   let server = createServer({
@@ -6,6 +7,26 @@ export function makeServer() {
 
     models: {
       user: Model,
+    },
+
+    factories: {
+      user: Factory.extend({
+        name() {
+          return faker.person.fullName();
+        },
+
+        email() {
+          return faker.internet.email();
+        },
+
+        password() {
+          return faker.internet.password();
+        }
+      })
+    },
+
+    seeds(server) {
+      server.createList('user', 2)
     },
 
     routes() {
@@ -17,7 +38,7 @@ export function makeServer() {
 
       this.post("/users", (schema, request) => {
         let attrs = JSON.parse(request.requestBody)
-        return {user: schema.users.create(attrs)}
+        return {user: schema.users.create(attrs)}, {timing: 2000}
       })
 
       this.put("/users/:id", (schema, request) => {
@@ -30,6 +51,7 @@ export function makeServer() {
         let id = request.params.id
         return {user: schema.users.find(id).destroy()}
       })
+
     },
   })
 

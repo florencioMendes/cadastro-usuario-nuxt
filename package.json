@@ -21,6 +21,7 @@
     "vue": "latest"
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.0.3",
     "miragejs": "^0.2.0-alpha.3"
   }
 }
