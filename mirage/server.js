@@ -38,7 +38,7 @@ export function makeServer() {
 
       this.post("/users", (schema, request) => {
         let attrs = JSON.parse(request.requestBody)
-        return {user: schema.users.create(attrs)}, {timing: 2000}
+        return {user: schema.users.create(attrs)}
       })
 
       this.put("/users/:id", (schema, request) => {
