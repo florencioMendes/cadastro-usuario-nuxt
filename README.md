@@ -42,20 +42,26 @@ O principal objetivo deste projeto é fornecer uma solução prática e eficient
     npm install
 
 ## Uso
-Para iniciar o servidor de desenvolvimento, execute:
+- Para iniciar o servidor de desenvolvimento, execute:
    ```bash
     npm run dev
 
 Acesse a aplicação em seu navegador no endereço http://localhost:3000.
 
-## Estrutura do Projeto
+### Estrutura do Projeto
 cadastro-usuario-nuxt/
 ├── components/
-│   └── CadastroUsuario.vue  # Componente de cadastro de usuário
+│   └── ListUsers.vue         # Componente de listagem de usuarios
+│   └── Loading.vue           # Componente para informar usuario o estado de loading
+│   └── Notification.vue      # Componente para notificar eventos realizados pelo usuario
+│   └── UserData.vue          # Componente para editar e exibir informações de um usuário
+│   └── UserRegistration.vue  # Componente de cadastro de usuário
+├── mirage/
+│   └── server.js             # Configuração api mock mirage
+├── plugins/
+│   └── mirage.js             # Configuração para mirage funcionar ao iniciar a aplicação
 ├── stores/
-│   ├── userStore.js         # Armazenamento de estado dos usuários
+│   ├── userStore.js          # Armazenamento de estado dos usuários
 │   └── notificationStore.js  # Armazenamento de estado para notificações
-├── pages/
-│   └── index.vue            # Página inicial
+ 
 ├── App.vue                   # Componente principal
-└── main.js                  # Ponto de entrada da aplicação
