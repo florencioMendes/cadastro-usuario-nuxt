@@ -48,7 +48,12 @@ O principal objetivo deste projeto é fornecer uma solução prática e eficient
 
 Acesse a aplicação em seu navegador no endereço http://localhost:3000.
 
+<<<<<<< HEAD
 ### Estrutura do Projeto
+=======
+## Estrutura do Projeto
+   ```bash
+>>>>>>> 2841b13508a9e6946eacf49e650c179c93f38aa5
 cadastro-usuario-nuxt/
 ├── components/
 │   └── ListUsers.vue         # Componente de listagem de usuarios
@@ -64,4 +69,8 @@ cadastro-usuario-nuxt/
 │   ├── userStore.js          # Armazenamento de estado dos usuários
 │   └── notificationStore.js  # Armazenamento de estado para notificações
  
+<<<<<<< HEAD
 ├── App.vue                   # Componente principal
+=======
+├── App.vue                   # Componente principal
+>>>>>>> 2841b13508a9e6946eacf49e650c179c93f38aa5
