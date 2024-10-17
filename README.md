@@ -1,75 +1,61 @@
-# Nuxt 3 Minimal Starter
+# Projeto de Cadastro de Usuários
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Descrição
 
-## Setup
+Este projeto é um sistema de cadastro de usuários desenvolvido em Vue.js com Nuxt.js. O objetivo é permitir que usuários se registrem facilmente, proporcionando uma interface amigável e intuitiva. O sistema armazena informações dos usuários persistindo com api mock utilizando mirageJS, possui controle de estado gerenciado pelo Pinia e permite notificações de sucesso ao cadastrar novos usuários.
 
-Make sure to install the dependencies:
+## Objetivo
 
-```bash
-# npm
-npm install
+O principal objetivo deste projeto é fornecer uma solução prática e eficiente para o cadastro de usuários. Através de uma interface limpa e responsiva, pode-se cadastrar novos usuários, listar, editar e deletar.
 
-# pnpm
-pnpm install
+## Funcionalidades
 
-# yarn
-yarn install
+- Cadastro de usuários com nome, email e senha.
+- Notificações de sucesso após o registro.
+- Armazenamento de dados do usuário usando Pinia.
+- Persistencia dos dados com API Mock utilizando MirageJS
 
-# bun
-bun install
-```
+## Tecnologias Utilizadas
 
-## Development Server
+- **Vue.js**: Framework JavaScript progressivo para construção de interfaces de usuário.
+- **Nuxt.js**: Framework para Vue.js que facilita a criação de aplicações universais.
+- **Pinia**: Gerenciador de estado para Vue.js.
+- **MirageJS**: Persistencia de dados
 
-Start the development server on `http://localhost:3000`:
+## Pré-requisitos
 
-```bash
-# npm
-npm run dev
+- Node.js e npm instalados.
+- Um editor de código (ex: Visual Studio Code).
 
-# pnpm
-pnpm run dev
+## Instalação
 
-# yarn
-yarn dev
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/florencioMendes/cadastro-usuario-nuxt.git
 
-# bun
-bun run dev
-```
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd cadastro-usuario-nuxt
 
-## Production
+3. Instale as dependências:
+   ```bash
+    npm install
 
-Build the application for production:
+## Uso
+Para iniciar o servidor de desenvolvimento, execute:
+   ```bash
+    npm run dev
 
-```bash
-# npm
-npm run build
+Acesse a aplicação em seu navegador no endereço http://localhost:3000.
 
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Estrutura do Projeto
+cadastro-usuario-nuxt/
+├── components/
+│   └── CadastroUsuario.vue  # Componente de cadastro de usuário
+├── stores/
+│   ├── userStore.js         # Armazenamento de estado dos usuários
+│   └── notificationStore.js  # Armazenamento de estado para notificações
+├── pages/
+│   └── index.vue            # Página inicial
+├── App.vue                   # Componente principal
+└── main.js                  # Ponto de entrada da aplicação
